@@ -1,0 +1,28 @@
+.consultancyForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.consultancyForm > .MuiTextField-root{
+  margin: 5px
+}
+
+.submitBtn{
+  width: 50% !important;
+  background: #000080 !important;
+  color: white !important;
+  margin: 1rem !important;
+}
+
+.consultancyContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.consultancy-main{
+  background: linear-gradient(to bottom, #11d2d2 20%, #fff 130%);
+}
