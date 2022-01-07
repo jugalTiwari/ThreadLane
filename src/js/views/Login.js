@@ -1,6 +1,6 @@
 import React from "react";
 import Form from '../common/Form'
-import {Button} from '@material-ui/core'
+import {Button} from '@mui/material'
 import '../../styles/views/Login.scss'
 import {MailOutline} from "@material-ui/icons";
 

@@ -1,33 +1,33 @@
-import React, {useState} from "react";
-import {Button} from "@material-ui/core";
-import {TextField} from "@material-ui/core";
+import React, { useState } from "react";
+import { Button } from "@mui/material";
+import { TextField, Snackbar, Alert } from "@mui/material";
 import '../../styles/views/Login.scss'
 import '../../styles/views/view.scss'
 
 const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const Consultancy = () => {
-    const [formData, setFormData] = useState({email: '', phone: ''}),
-        commonProperties = {variant: 'outlined', required: true},
-        [emailError, setEmailError] = useState({isError: false, ErrorMessage: ''});
+    const [formData, setFormData] = useState({ email: '', phone: '' }),
+        commonProperties = { variant: 'outlined', required: true },
+        [emailError, setEmailError] = useState({ isError: false, ErrorMessage: '' });
     const onSubmit = (e) => {
-            e.preventDefault();
-            const validatedForm = {};
-            for (let i in formData) {
-                if (i === "email") {
-                    if (!EMAIL_REGEX.test(formData[i])) return setEmailError({isError: true, ErrorMessage:'Email Incorrect'});
-                    else {
-                        setEmailError({isError: false, ErrorMessage: ''});
-                    }
-                } else {
-                    Object.assign(validatedForm, formData);
+        e.preventDefault();
+        const validatedForm = {};
+        for (let i in formData) {
+            if (i === "email") {
+                if (!EMAIL_REGEX.test(formData[i])) return setEmailError({ isError: true, ErrorMessage: 'Email Incorrect' });
+                else {
+                    setEmailError({ isError: false, ErrorMessage: '' });
                 }
+            } else {
+                Object.assign(validatedForm, formData);
             }
-            alert(JSON.stringify(validatedForm))
+        }
+        alert(JSON.stringify(validatedForm))
     },
         onChange = (e) => {
-            const {target: {name, value}} = e;
-            if(emailError.isError) setEmailError(false)
-            setFormData({...formData, [name]: value})
+            const { target: { name, value } } = e;
+            if (emailError.isError) setEmailError(false)
+            setFormData({ ...formData, [name]: value })
         }
 
     return (
@@ -40,7 +40,7 @@ const Consultancy = () => {
                         label='Email'
                         onChange={onChange}
                         fullWidth
-                        InputProps={{autoComplete: 'off'}}
+                        InputProps={{ autoComplete: 'off' }}
                         error={emailError.isError}
                         helperText={emailError.isError ? emailError.ErrorMessage : ''}
                         {...commonProperties}
@@ -50,7 +50,7 @@ const Consultancy = () => {
                         label='Phone Number'
                         onChange={onChange}
                         fullWidth
-                        InputProps={{autoComplete: 'off'}}
+                        InputProps={{ autoComplete: 'off' }}
                         {...commonProperties}
                     />
                     <TextField
@@ -61,11 +61,16 @@ const Consultancy = () => {
                         fullWidth
                         {...commonProperties}
                     />
-                    <Button className='submitBtn' type='submit'>Send</Button>
+                    <Button variant="outlined" type='submit'>Send</Button>
                 </form>
             </section>
-            <div className='circle1'/>
-            <div className='circle2'/>
+            <Snackbar open={emailError.isError} autoHideDuration={6000} message={'ff'} onClose={() => setEmailError({ isError: false })} >
+                {/*<Alert severity={emailError.isError ? 'error' : 'success'}>*/}
+                This is a success message!
+                {/*</Alert>*/}
+            </Snackbar>
+            <div className='circle1' />
+            <div className='circle2' />
         </main>
     )
 }
