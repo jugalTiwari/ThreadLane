@@ -1,0 +1,65 @@
+.profileMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.paper {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 234, 242);
+  border-radius: 0px 0px 8px 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.userCover {
+  width: 100%;
+  object-fit: cover;
+}
+
+.userDisplayPicture {
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  object-fit: cover;
+  color: transparent;
+  text-indent: 10000px;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  background-color: rgb(229, 234, 242);
+  border: 4px solid rgb(255, 255, 255);
+  width: 100px;
+  height: 100px;
+}
+
+.followersBox {
+  max-width: 300px;
+  margin: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.profileIcons {
+  border-radius: 8px;
+}

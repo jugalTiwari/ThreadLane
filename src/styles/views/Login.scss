@@ -1,0 +1,107 @@
+.login-main{
+    height: 100vh;
+    // background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(to bottom, #000080 20%, #fff 130%);
+    background: -moz-linear-gradient(to bottom, #000080 20%, #E1B11B 130%);
+    background: linear-gradient(to bottom, #000080 20%, #fff 130%);
+}
+
+.glass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    height: 80%;
+    width: 60%;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3)
+        );
+    border-radius: 2rem;
+    backdrop-filter: blur(0.4rem);
+}
+
+.circle1, .circle2{
+    z-index: 1;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2));
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1{
+    bottom: 0;
+    left: 10%;
+}
+.circle2{
+    top: -7%;
+    right: 10%;
+}
+
+.input{
+    font-family: sans-serif;
+    position: relative;
+    min-height: 50%;
+    min-width: 50%;
+    overflow: hidden;
+}
+
+.inputField{
+    outline: none;
+    width: 100%;
+    height: 30px;
+    padding-top: 18px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #000;
+}
+
+.label{
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    pointer-events: none;
+}
+
+.label::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #000080;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.labelContent{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.inputField:focus + .label .labelContent, 
+.inputField:valid + .label .labelContent{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #000080;
+}
+
+.inputField:focus + .label::after, 
+.inputField:valid + .labelContent::after {
+    transform: translateX(0%);
+}
+
+.inputField:focus{
+    opacity: 0.9;
+}
