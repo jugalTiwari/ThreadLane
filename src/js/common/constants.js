@@ -5,17 +5,23 @@ export const SECONDARY_COLOR = 'rgb(255, 151, 119)';
 
 export const theme = createTheme({
     typography: {
+        fontFamily: ['Varela', 'Avenir', 'Helvetica', 'sans-serif'].join(','),
+        allVariants: {
+            wordBreak: 'break-word'
+        },
         button: {
             textTransform: 'none'
-        }
+        },
     },
     palette: {
+        text: {
+            primary: 'rgb(29, 36, 56)',
+            secondary: 'rgb(148, 164, 196)'
+        },
         primary: {
-            // Purple and green play nicely together.
             main: PRIMARY_COLOR,
         },
         secondary: {
-            // This is green.A700 as hex.
             main: PRIMARY_COLOR,
         },
     },
