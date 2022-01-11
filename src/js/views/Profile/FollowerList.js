@@ -15,7 +15,7 @@ const FollowerList = () => {
     const comp = useMemo(() => TEMP.map((item, index) => {
         return <Grid item xs={6} md={4} key={item.name + index}>
             <Paper sx={{ p: 2 }}>
-                <Stack direction='row' justifyContent='space-between'>
+                <Stack direction='row' justifyContent='space-between' className={styles.followerStack}>
                     <UserAvatarInfo {...item} avatarSx={{ width: 50, height: 50, mr: 2 }} className={styles.follower} />
                     <Button variant='text'>Following</Button>
                 </Stack>

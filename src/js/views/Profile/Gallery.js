@@ -9,7 +9,7 @@ export const Gallerys = () => {
     return (
         <Paper sx={{ p: 3 }}>
             <Grid container spacing={2}>
-                {itemData.map(img => (<Grid item xs={6} md={3}>
+                {itemData.map(img => (<Grid item xs={6} md={3} key={img.title}>
                     <img src={img.img} className={styles.galleryImage} />
                 </Grid>))}
             </Grid>

@@ -106,3 +106,11 @@
   border-radius: 8px;
   background-color: #fff;
 }
+
+@media screen and (max-width: 520px) {
+  .followerStack {
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center !important;
+  }
+}
