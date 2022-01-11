@@ -2,6 +2,8 @@ import { createTheme } from '@mui/material/styles';
 
 export const PRIMARY_COLOR = 'rgb(36, 153, 239)';
 export const SECONDARY_COLOR = 'rgb(255, 151, 119)';
+export const PRIMARY_COLOR_TEXT = 'rgb(29, 36, 56)';
+export const SECONDARY_COLOR_TEXT = 'rgb(148, 164, 196)';
 
 export const theme = createTheme({
     typography: {
@@ -15,8 +17,8 @@ export const theme = createTheme({
     },
     palette: {
         text: {
-            primary: 'rgb(29, 36, 56)',
-            secondary: 'rgb(148, 164, 196)'
+            primary: PRIMARY_COLOR_TEXT,
+            secondary: SECONDARY_COLOR_TEXT
         },
         primary: {
             main: PRIMARY_COLOR,

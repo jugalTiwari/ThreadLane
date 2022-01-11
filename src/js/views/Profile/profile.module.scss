@@ -1,3 +1,5 @@
+@import "../../../App.scss";
+
 .profileMain {
   display: flex;
   align-items: center;
@@ -98,4 +100,9 @@
 
 .galleryImage {
   width: 100%;
+}
+
+.follower {
+  border-radius: 8px;
+  background-color: #fff;
 }

@@ -4,12 +4,13 @@ import { useTheme } from '@mui/material/styles'
 import SwipeableViews from 'react-swipeable-views';
 import styles from "./profile.module.scss"
 import userCover from '../../assets/user-cover-pic.png'
-import defaultUser from '../../assets/001-man.svg';
 import { BusinessCenterOutlined, CollectionsBookmarkOutlined, LocationOnOutlined, MailOutlined, PersonAddAlt, PersonOutline } from "@mui/icons-material";
 
 import { PRIMARY_COLOR, SECONDARY_COLOR } from '../../common/constants'
 import UserPosts from "./UserPosts";
 import { Gallerys } from './Gallery';
+import UserAvatarInfo from "../../common/components/UserAvatarInfo";
+import FollowerList from "./FollowerList";
 
 function a11yProps(index) {
     return {
@@ -49,12 +50,13 @@ const Profile = () => {
                     <img className={styles.userCover} src={userCover} alt='User Cover' />
                 </Box>
                 <Box alignItems='center' justifyContent='space-between' display='flex' sx={{ pl: 4, pr: 4 }} flexWrap='wrap'>
-                    <Box sx={{ display: 'flex', alignItems: 'center', position: 'relative', top: -25 }}>
-                        <Avatar className={styles.avatar} alt="Jugal" src={defaultUser} sx={{ height: 100, width: 100 }} />
-                        <Box sx={{ ml: 2, mt: 4 }}>
-                            <Typography sx={{ fontWeight: 600, fontSize: 18 }}>Jugal</Typography>
-                            <Typography sx={{ fontSize: 12, color: 'rgb(148, 164, 196)' }}>Developer</Typography>
-                        </Box>
+                    <Box sx={{ position: 'relative', top: -25 }}>
+                        <UserAvatarInfo
+                            avatarCls={styles.avatar}
+                            name="Jugal"
+                            designation='Developer'
+                            infoSx={{ ml: 2, mt: 4 }}
+                        />
                     </Box>
 
                     <Box>
@@ -136,6 +138,7 @@ const Profile = () => {
                         </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
+                        <FollowerList />
                     </TabPanel>
                     <TabPanel value={value} index={2} dir={theme.direction}>
                         <Gallerys />
